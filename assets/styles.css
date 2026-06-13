@@ -1,0 +1,116 @@
+:root{
+  --bg:#f7fafc; --card:#f3f6f6; --muted:#6b7280; --accent:#0ea5a4;
+  --max-width:900px; --gap:18px; --heading:#0b5e5b; --section-divider:rgba(15,23,42,0.06);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:var(--bg);color:#111;margin:0}
+.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+.site-header{background:linear-gradient(90deg,#0ea5a4, #3b82f6);color:#fff;padding:28px 0}
+.site-header .container{text-align:center;padding:40px 18px}
+.name{margin:0;font-size:2.25rem;line-height:1.05}
+.title{margin:8px 0 0;opacity:0.95;font-weight:500}
+.contact a{color:rgba(255,255,255,0.92);text-decoration:underline}
+main{padding:22px 0}
+section{background:var(--card);border-radius:8px;padding:18px;margin-bottom:var(--gap);box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+h2{margin-top:0;color:var(--heading);font-size:1.25rem}
+ul{margin:0;padding-left:1.2rem}
+li{margin:.35rem 0}
+code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.95em}
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:0.9rem}
+
+@media(min-width:700px){
+  .container{padding:36px}
+  .name{font-size:2.6rem}
+}
+
+.portfolio{list-style:none;padding:0;margin:12px 0 6px;display:flex;gap:14px;align-items:center;justify-content:center}
+.portfolio li{margin:0}
+.portfolio li a{display:inline-block}
+.portfolio li a img{width:28px;height:28px;border-radius:6px;display:block}
+header .portfolio{margin-top:12px}
+header .portfolio li a img{width:28px;height:28px;border-radius:6px}
+.disclaimer{font-size:0.92rem;color:var(--muted);margin-top:10px}
+
+/* Header two-column layout: image + divider on left, content on right */
+.header-inner{display:flex;align-items:center;gap:28px;max-width:var(--max-width);margin:0 auto;width:100%;}
+.profile-left{display:flex;flex-direction:row;align-items:center;flex:0 0 180px;justify-content:center}
+.profile-left img{width:140px;height:140px;border-radius:999px;object-fit:cover;box-shadow:0 6px 18px rgba(2,6,23,0.25)}
+.divider{width:4px;height:100px;background:rgba(255,255,255,0.18);border-radius:2px;margin-left:18px;margin-right:18px}
+.profile-right{text-align:left}
+.profile-right .contact{margin-top:8px}
+.profile-right .portfolio{justify-content:flex-start;margin-top:12px}
+
+@media(max-width:760px){
+  .header-inner{flex-direction:column;align-items:center;text-align:center}
+  .profile-left{flex:0 0 auto}
+  .divider{width:60%;height:3px;margin:12px 0}
+  .profile-right{text-align:center}
+  .profile-right .portfolio{justify-content:center}
+}
+
+/* Projects two-column layout */
+.certs-projects .two-col{display:flex;gap:20px;align-items:flex-start}
+.certs-projects .col-left{flex:1}
+.certs-projects .col-right{flex:1;min-width:260px}
+.repo-table{width:100%;border-collapse:collapse}
+.repo-table th,.repo-table td{padding:8px 10px;border-bottom:1px solid #eef2f7;text-align:left;vertical-align:top}
+.repo-table thead th{font-weight:600;background:transparent}
+.repo-table tbody tr:hover{background:#fbfdff}
+
+@media(max-width:860px){
+  .certs-projects .two-col{flex-direction:column}
+  .certs-projects .col-right{min-width:0}
+}
+
+/* Accordion styling for details/summary */
+details{border:1px solid #eef2f7;border-radius:6px;padding:8px;margin:10px 0;background:#fff}
+summary{cursor:pointer;list-style:none;outline:none;padding:6px 8px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"▾";float:right;opacity:0.6}
+details[open] summary:after{content:"▴"}
+details ul{margin:8px 0 0;padding-left:1.05rem}
+
+@media(max-width:760px){
+  details{width:100%}
+}
+
+/* Repo cards */
+.repo-cards{display:flex;flex-direction:column;gap:10px}
+.repos-section{text-align:center}
+.repos-section h2{font-size:1.25rem;margin-bottom:10px}
+.repo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;align-items:start;justify-items:center;max-width:980px;margin:0 auto;justify-content:center}
+.repo-card{display:block;padding:12px;border-radius:8px;background:#fff;border:1px solid #eef2f7;text-decoration:none;color:inherit;max-width:340px;width:100%}
+.repo-card:hover{box-shadow:0 6px 18px rgba(2,6,23,0.06);transform:translateY(-2px)}
+.repo-title{font-weight:700;margin-bottom:6px;font-size:1rem}
+.repo-desc{color:var(--muted);font-size:0.9rem}
+
+/* Company cards */
+.companies-section{margin-top:18px;text-align:center}
+.company-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;justify-items:center;align-items:start;max-width:980px;margin:0 auto}
+.company-card{background:#fff;border:1px solid #eef2f7;padding:10px;border-radius:8px;max-width:300px;width:100%;text-align:left}
+.company-name{font-weight:700;font-size:0.95rem;color:#0f172a}
+.company-domain{font-size:0.78rem;color:var(--muted);margin-top:4px}
+.company-role{margin-top:6px;font-weight:600;font-size:0.9rem}
+.company-dates{font-size:0.75rem;color:var(--muted);margin-top:6px}
+.company-logo{width:28px;height:28px;vertical-align:middle;margin-right:10px;border-radius:6px}
+
+/* Subtle separator between sections */
+section + section{border-top:1px solid var(--section-divider);padding-top:12px}
+
+/* Certifications grid: 3 columns */
+.certs-section{text-align:center}
+.certs-section h2{font-size:1.25rem}
+.certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;justify-items:start}
+.cert-group{background:transparent;padding:4px;border-radius:6px;max-width:360px;margin:0;text-align:left}
+.cert-group h3{margin:0 0 6px;font-size:0.94rem;font-weight:600;color:#0f172a}
+.cert-group ul{margin:0;padding-left:1rem}
+.cert-group ul li{font-size:0.85rem;line-height:1.15;color:var(--muted);margin:0.2rem 0}
+.cert-group ul li a{color:var(--accent);text-decoration:none}
+.cert-group ul li a:hover{text-decoration:underline}
+
+@media(max-width:700px){
+  .certs-grid{grid-template-columns:repeat(1,1fr)}
+}
+
+/* Small browse-all text under repos */
+.repos-section .browse-all{font-size:0.75rem;color:var(--muted);margin-top:8px;opacity:0.95}
